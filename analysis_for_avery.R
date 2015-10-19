@@ -96,6 +96,7 @@ cables_sent$avg_g_cable <- cables_sent$sum_g / cables_sent$n_sent
 ggplot(cables_sent, aes(x = avg_g_cable)) + geom_histogram()
 ggplot(subset(cables_sent, n_sent > 10), aes(x = avg_g_cable)) + geom_histogram()
 ggplot(cables_sent, aes(x = n_sent, y = sum_g, color = avg_g_cable)) + geom_point() + 
-  scale_color_continuous(high = "red", low = "slate blue") + theme_bw()
+  scale_color_continuous(name = "average mentions per cable", high = "red", low = "slate blue") + theme_bw() + 
+  ylab("number of times Guantanamo is mentioned") + xlab("number of cables sent") 
 #as expected, the more cables that are sent, the more times g is mentioned.  Need to account for that.  
 
